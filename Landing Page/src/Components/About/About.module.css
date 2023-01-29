@@ -1,0 +1,65 @@
+.aboutContainer {
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    margin-top: 5rem;
+}
+
+.about div {
+    margin-top: 50px;
+}
+
+.about h1 {
+    display: inline;
+    margin: 5px 0px;
+    border-bottom: 2px solid #ff8700;
+}
+
+
+.about ul {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    text-align: center;
+}
+
+.about ul li {
+    padding: 20px;
+}
+
+
+.about ul h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.icon {
+    color: rgb(113, 113, 113);
+    border: 4px solid gray;
+    padding: 20px 30px;
+    border-radius: 50%;
+}
+
+.about ul li:hover .icon {
+    color: #005bea;
+    border-color: #005bea;
+    animation: zoomOut 1s ease-out forwards 0.3ms;
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        outline: 4px solid #005aeaa2
+    }
+
+    to {
+        transform: scale(1.1);
+        outline: 7px solid #005aea58
+    }
+}

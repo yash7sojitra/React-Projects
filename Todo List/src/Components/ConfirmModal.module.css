@@ -1,0 +1,28 @@
+.confirmText {
+    font-size: 1rem;
+    color: white;
+
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btns button {
+    margin-right: 7px;
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    width: 3rem;
+}
+
+.noBtn {
+    background: #2f3641;
+    color: white;
+}
+
+.yesBtn {
+    background: rgb(253, 131, 113);
+}

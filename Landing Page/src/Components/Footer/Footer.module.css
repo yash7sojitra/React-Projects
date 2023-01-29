@@ -1,0 +1,38 @@
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+.footerSection {
+    margin: 3rem 0;
+}
+
+.footerSection ul {
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.aboutUs {
+    width: 260px;
+}
+
+.aboutUs p {
+    font-size: 12px;
+}
+
+.footerSection ul li {
+    padding-right: 20px;
+    width: 200px;
+}
+
+.footerSection ul li ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0px
+}

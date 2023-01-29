@@ -1,0 +1,13 @@
+.copyrightContainer {
+    background-color: black;
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyrightContainer div {
+    width: max-content;
+    color: white;
+}
