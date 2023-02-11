@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Cool Flower",
+    "price": 20,
+    "category": "Decoration",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/2.png"
+  },
+  {
+    "id": 2,
+    "name": "Cozy Sofa",
+    "price": 150,
+    "category": "Furniture",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/3.png"
+  },
+  {
+    "id": 3,
+    "name": "Awesome Candle",
+    "price": 15,
+    "category": "Lighting",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/4.png"
+  },
+  {
+    "id": 4,
+    "name": "Fancy Chair",
+    "price": 70,
+    "category": "Furniture",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/5.png"
+  },
+  {
+    "id": 5,
+    "name": "Chinese Teapot",
+    "price": 50,
+    "category": "Decoration",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/6.png"
+  },
+  {
+    "id": 6,
+    "name": "Soft Pillow",
+    "price": 30,
+    "category": "Bedding",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/7.png"
+  },
+  {
+    "id": 7,
+    "name": "Wooden casket",
+    "price": 20,
+    "category": "Decoration",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/8.png"
+  },
+  {
+    "id": 8,
+    "name": "Awesome Armchair",
+    "price": 90,
+    "category": "Furniture",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/9.png"
+  },
+  {
+    "id": 9,
+    "name": "Awesome Lamp",
+    "price": 40,
+    "category": "Lighting",
+    "image": "https://flatlogic-ecommerce-backend.herokuapp.com/images/products/1.png"
+  }
+]
