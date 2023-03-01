@@ -1,9 +1,13 @@
 import { faSpinner, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import useProductItem from "../../hooks/useProductItem";
+import { cartAction } from "../store/cart-slices";
 
 const ProductItemDetails = (props) => {
+  const dispatch = useDispatch();
+
   const id = Number.parseInt(props.id);
   const { product, isLoading } = useProductItem(id);
 
@@ -19,6 +23,21 @@ const ProductItemDetails = (props) => {
   const increaseQuantityHandler = () => {
     const newQuantity = quantity + 1;
     setQuantity(newQuantity);
+  };
+
+  const addToCartHandler = () => {
+    if (!isLoading) {
+      dispatch(
+        cartAction.addProductToCart({
+          id: product.id,
+          name: product.name,
+          category: product.category,
+          image: product.image,
+          price: product.price,
+          quantity: quantity,
+        })
+      );
+    }
   };
 
   if (isLoading) {
@@ -93,7 +112,10 @@ const ProductItemDetails = (props) => {
                 </span>
               </span>
               <div className="flex space-x-2 w-full absolute bottom-0">
-                <button className="w-1/2 p-3 px-5 text-theme-orange font-black border-[1px] border-theme-orange hover:bg-theme-orange hover:text-white transition ease-out ">
+                <button
+                  onClick={addToCartHandler}
+                  className="w-1/2 p-3 px-5 text-theme-orange font-black border-[1px] border-theme-orange hover:bg-theme-orange hover:text-white transition ease-out "
+                >
                   ADD TO CART
                 </button>
                 <button className="w-1/2 text-white bg-theme-orange py-4 px-7 font-bold hover:bg-hover-orange">

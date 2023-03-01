@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 // import classes from "./Navbar.module.css";
 
@@ -13,6 +14,9 @@ const Navbar = () => {
   const [pagesDropDownVisible, setPagesDropDownVisible] = useState(false);
   const [shopDropDownVisible, setShopDropDownVisible] = useState(false);
   const [blogDropDownVisible, setBlogDropDownVisible] = useState(false);
+  const products = useSelector((state) => state.cart.products);
+
+  const NumberOfProductsInCart = products.length;
 
   return (
     <nav className="bg-white flex justify-center items-center shadow-xl sticky top-0 z-50">
@@ -131,8 +135,11 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faUser} />
             </li>
             <Link to="cart">
-              <li className="hover:text-theme-orange cursor-pointer">
+              <li className="hover:text-theme-orange cursor-pointer relative">
                 <FontAwesomeIcon icon={faCartShopping} />
+                <p className="text-sm absolute -top-1 -right-3">
+                  {NumberOfProductsInCart}
+                </p>
               </li>
             </Link>
           </ul>

@@ -64,9 +64,11 @@ const AvailableProducts = () => {
   ));
 
   return (
-    <div className="container">
-      <ul className="flex flex-wrap py-5">{productsList}</ul>
-    </div>
+    <>
+      <div className="container">
+        <ul className="flex flex-wrap py-5">{productsList}</ul>
+      </div>
+    </>
   );
 };
 

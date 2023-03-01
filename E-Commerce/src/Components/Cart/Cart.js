@@ -1,8 +1,17 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
+import CartProductItem from "./CartProductItem";
 import CartTotal from "./CartTotal";
 
 const Cart = () => {
+  const totalPrice = useSelector((state) => state.cart.total);
+  const products = useSelector((state) => state.cart.products);
+
+  const cartProductItem = products.map((product, i) => (
+    <tr className="mt-2" key={i}>
+      <CartProductItem product={product} />
+    </tr>
+  ));
+
   return (
     <section className="container lg:flex">
       <div className="w-[70%] my-10 px-5">
@@ -10,13 +19,14 @@ const Cart = () => {
         <table className="table-auto w-full ">
           <thead>
             <tr className="border-b-[2px]">
-              <th className="py-2 text-left">PRODUCT</th>
-              <th className="py-2 text-left">QUANTITY</th>
-              <th className="py-2 text-left">PRICE</th>
+              <th className="py-2 text-left text-gray-600">PRODUCT</th>
+              <th className="py-2 text-left text-gray-600">QUANTITY</th>
+              <th className="py-2 text-left text-gray-600">PRICE</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="mt-2">
+            {cartProductItem}
+            {/* <tr className="mt-2">
               <td>
                 <div className="flex items-center py-5">
                   <img
@@ -43,11 +53,12 @@ const Cart = () => {
                   <FontAwesomeIcon icon={faXmark} className="text-gray-600" />
                 </button>
               </td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
+        {!products.length && <p className="my-2  font-black">No items</p>}
       </div>
-      <CartTotal />
+      <CartTotal totalPrice={totalPrice} />
     </section>
   );
 };
