@@ -17,7 +17,9 @@ const Navbar = () => {
   return (
     <nav className="bg-white flex justify-center items-center shadow-xl sticky top-0 z-50">
       <div className="container flex justify-between items-center h-[10vh]">
-        <span className="text-2xl font-extrabold ">FlatLogic</span>
+        <span className="text-2xl font-extrabold ">
+          <Link to="/">FlatLogic</Link>
+        </span>
         <ul className="flex items-center space-x-6  text-gray-600 h-[10vh] ">
           <li className="hover:text-theme-orange cursor-pointer h-[100%] flex items-center">
             <Link to="/">Home</Link>
@@ -128,9 +130,11 @@ const Navbar = () => {
             <li className="hover:text-theme-orange cursor-pointer">
               <FontAwesomeIcon icon={faUser} />
             </li>
-            <li className="hover:text-theme-orange cursor-pointer">
-              <FontAwesomeIcon icon={faCartShopping} />
-            </li>
+            <Link to="cart">
+              <li className="hover:text-theme-orange cursor-pointer">
+                <FontAwesomeIcon icon={faCartShopping} />
+              </li>
+            </Link>
           </ul>
         </span>
       </div>

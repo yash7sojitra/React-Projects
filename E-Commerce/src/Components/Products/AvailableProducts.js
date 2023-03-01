@@ -19,7 +19,7 @@ const AvailableProducts = () => {
 
       for (const key in responseData) {
         loadedProducts.push({
-          id: key,
+          id: responseData[key].id,
           name: responseData[key].name,
           price: responseData[key].price,
           category: responseData[key].category,
@@ -40,7 +40,7 @@ const AvailableProducts = () => {
 
   if (isLoading) {
     return (
-      <section className="flex justify-center p-4 ">
+      <section className="flex justify-center p-4 scale-150 ">
         <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
       </section>
     );
