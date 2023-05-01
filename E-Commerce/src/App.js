@@ -7,6 +7,7 @@ import Error from "./Components/Error/Error";
 import ShopPage from "./pages/Shop";
 import ProductDetailsPage from "./pages/ProductDetails";
 import CartPage from "./pages/Cart";
+import WishlistPage from "./pages/Wishlist";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
         element: <CartPage />,
       },
       {
-        path: "billing",
+        path: "wishlist",
+        element: <WishlistPage />,
       },
     ],
   },

@@ -19,7 +19,7 @@ const Navbar = () => {
   const NumberOfProductsInCart = products.length;
 
   return (
-    <nav className="bg-white flex justify-center items-center shadow-xl sticky top-0 z-50">
+    <nav className="bg-white flex justify-center items-center shadow-xl sticky top-0 z-30">
       <div className="container flex justify-between items-center h-[10vh]">
         <span className="text-2xl font-extrabold ">
           <Link to="/">FlatLogic</Link>
@@ -60,9 +60,11 @@ const Navbar = () => {
                 <li className="p-2 hover:text-theme-orange hover:scale-110 hover:font-bold">
                   <Link to="error">404</Link>
                 </li>
-                <li className="p-2 hover:text-theme-orange hover:scale-110 hover:font-bold">
-                  Wishlist
-                </li>
+                <Link to="wishlist">
+                  <li className="p-2 hover:text-theme-orange hover:scale-110 hover:font-bold">
+                    Wishlist
+                  </li>
+                </Link>
                 <li className="p-2 hover:text-theme-orange hover:scale-110 hover:font-bold">
                   Login
                 </li>

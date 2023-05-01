@@ -2,10 +2,13 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
+import ProductModal from "./ProductModal";
 const AvailableProducts = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
+  const [showProductModal, setShowProductModal] = useState(false);
+  const [productModalDetail, setProductModalDetail] = useState();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,6 +41,11 @@ const AvailableProducts = () => {
     });
   }, []);
 
+  const showProductModalHandler = (product) => {
+    setProductModalDetail(product);
+    setShowProductModal(true);
+  };
+
   if (isLoading) {
     return (
       <section className="flex justify-center p-4 scale-150 ">
@@ -60,12 +68,29 @@ const AvailableProducts = () => {
       price={product.price}
       category={product.category}
       image={product.image}
+      showModal={showProductModalHandler}
     />
   ));
 
+  const onCloseModalHandler = () => {
+    setShowProductModal(false);
+  };
+
+  let modal;
+
+  if (showProductModal) {
+    modal = (
+      <ProductModal
+        onClose={onCloseModalHandler}
+        productModalDetail={productModalDetail}
+      />
+    );
+  }
+
   return (
     <>
-      <div className="container">
+      {modal}
+      <div className="container overflow-hidden">
         <ul className="flex flex-wrap py-5">{productsList}</ul>
       </div>
     </>

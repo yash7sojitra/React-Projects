@@ -26,43 +26,58 @@ const ProductItem = (props) => {
     );
   };
 
+  const showModalHandler = () => {
+    props.showModal({
+      id: props.id,
+      name: props.name,
+      category: props.category,
+      price: props.price,
+      image: props.image,
+    });
+  };
+
   return (
-    <li className="w-1/4 h-auto py-5 group rounded-sm cursor-pointer ">
-      <div className="relative">
-        <div className="flex items-center relative">
-          <Link to={`products/${props.id}`}>
-            <img
-              src={props.image}
-              alt={props.name}
-              className="px-5 group-hover:scale-105 transition ease-in duration-300"
-            />
-          </Link>
-          <div className="flex flex-col relative right-14 space-y-5  opacity-0  group-hover:opacity-100 transition-opacity ease-in duration-500">
-            <button className="hover:text-theme-orange">
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-            <button className="hover:text-theme-orange">
-              <FontAwesomeIcon icon={faMagnifyingGlassPlus} />
-            </button>
-            <button
-              className="hover:text-theme-orange"
-              onClick={addToCartHandler}
-            >
-              <FontAwesomeIcon icon={faCartShopping} />
-            </button>
+    <>
+      <li className="w-1/4 h-auto py-5 group rounded-sm cursor-pointer ">
+        <div className="relative">
+          <div className="flex items-center relative">
+            <Link to={`products/${props.id}`}>
+              <img
+                src={props.image}
+                alt={props.name}
+                className="px-5 group-hover:scale-105 transition ease-in duration-300"
+              />
+            </Link>
+            <div className="flex flex-col relative right-14 space-y-5  opacity-0  group-hover:opacity-100 transition-opacity ease-in duration-500">
+              <button className="hover:text-theme-orange">
+                <FontAwesomeIcon icon={faHeart} />
+              </button>
+              <button
+                className="hover:text-theme-orange"
+                onClick={showModalHandler}
+              >
+                <FontAwesomeIcon icon={faMagnifyingGlassPlus} />
+              </button>
+              <button
+                className="hover:text-theme-orange"
+                onClick={addToCartHandler}
+              >
+                <FontAwesomeIcon icon={faCartShopping} />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <Link to={`products/${props.id}`}>
-        <div className="px-5 py-5">
-          <p className="text-gray-400 ">{props.category}</p>
-          <h1 className="font-black group-hover:text-theme-orange">
-            {props.name}
-          </h1>
-          <h3>{price}</h3>
-        </div>
-      </Link>
-    </li>
+        <Link to={`products/${props.id}`}>
+          <div className="px-5 py-5">
+            <p className="text-gray-400 ">{props.category}</p>
+            <h1 className="font-black group-hover:text-theme-orange">
+              {props.name}
+            </h1>
+            <h3>{price}</h3>
+          </div>
+        </Link>
+      </li>
+    </>
   );
 };
 

@@ -20,6 +20,15 @@ module.exports = {
         "theme-orange": "#c18053",
         "hover-orange": "#AC7045",
       },
+      keyframes: {
+        slideDown: {
+          "0%": { transform: "translateY(-50px)", opacity: 0.5 },
+          "100%": { transform: "translateY(0px)", opactiy: 1 },
+        },
+      },
+      animation: {
+        "slide-down": "slideDown 0.3s linear 1",
+      },
     },
   },
   plugins: [],
